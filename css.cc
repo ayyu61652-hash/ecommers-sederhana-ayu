@@ -276,3 +276,26 @@ nav a{
 }
 
 }
+.product-container {
+  display: grid;
+  /* Membuat kolom otomatis yang menyesuaikan lebar layar */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px; /* Jarak antar kartu */
+  padding: 20px;
+}
+
+.product-card {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-card img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain; /* Agar gambar tidak terpotong */
+}
