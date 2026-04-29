@@ -13,8 +13,9 @@
 
 /* supaya gambar tidak meluber */
 img{
-    max-width:100%;
-    height:auto;
+max-width:100%;
+height:auto;
+}
 }
 
 body{
@@ -129,14 +130,14 @@ nav a:hover{
 
 /* Gambar produk */
 
-.card img{
+..card img{
     width:100%;
     max-width:220px;
     height:180px;
     object-fit:cover;
-    border-radius:10px;
-    margin:0 auto 15px;
     display:block;
+    margin:auto;
+}
 }
 
 /* teks produk */
@@ -229,7 +230,12 @@ nav a{
 }
 
 .section-1 img{
-    height:220px;
+    width:100%;
+    max-width:900px;
+    height:300px;
+    object-fit:cover;
+    border-radius:15px;
+}
 }
 
 .p-rekomendasi{
@@ -240,9 +246,12 @@ nav a{
 
 @media (max-width:480px){
 
-.produk-container{
-    grid-template-columns:repeat(2,1fr);
-    gap:12px;
+..produk-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    padding:40px 5%;
+}
 }
 
 .card{
