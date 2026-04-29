@@ -1,271 +1,130 @@
-* {
-    box-sizing: border-box;
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-/* Warna utama */
-:root {
-    --Utama: #001aff;
-    --Gelap: #050505;
-    --Gelap-2: #121212;
-    --Text-Terang: #ffffff;
-    --Text-Abu: #b0b0b0;
-}
-
-/* supaya gambar tidak meluber */
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-body {
-    font-family: 'Segoe UI', Roboto, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: var(--Gelap);
-    color: var(--Text-Terang);
-    scroll-behavior: smooth;
+/* BODY */
+body{
+    font-family: 'Poppins', sans-serif;
+    background:#ffd83d;
+    color:#333;
 }
 
 /* HEADER */
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 5%;
-    background: rgba(0, 0, 0, 0.9);
-    border-bottom: 1px solid rgba(0, 161, 255, 0.2);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    backdrop-filter: blur(10px);
+header{
+    background:#ffcc00;
+    text-align:center;
+    padding:30px 20px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
 }
 
-.e-nama {
-    font-size: 1.5rem;
-    color: var(--Utama);
-    margin: 0;
+header h1{
+    font-size:42px;
+    color:white;
+    margin-bottom:10px;
+    letter-spacing:1px;
 }
 
-nav a {
-    color: var(--Text-Terang);
-    margin-left: 25px;
-    text-decoration: none;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: 0.3s;
+header p{
+    color:white;
+    font-size:16px;
 }
 
-nav a:hover {
-    color: var(--Utama);
+/* CONTAINER */
+.container{
+    width:90%;
+    margin:40px auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
 }
 
-/* HERO SECTION */
-
-.section-1 {
-    padding: 80px 20px;
-    text-align: center;
-    background: radial-gradient(circle at center, rgba(0, 26, 225, 0.4) 0%, rgba(0, 5, 5, 0) 70%);
+/* CARD */
+.card{
+    background:white;
+    border-radius:25px;
+    overflow:hidden;
+    box-shadow:0 6px 15px rgba(0,0,0,0.15);
+    transition:0.3s ease;
 }
 
-.section-1 h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
+.card:hover{
+    transform:translateY(-10px);
 }
 
-.section-1 p {
-    color: var(--Text-Abu);
-    font-size: 1.1rem;
-    margin-bottom: 30px;
+/* IMAGE */
+.card img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
 }
 
-/* Banner */
-
-.section-1 img {
-    width: 100%;
-    max-width: 860px;
-    height: 340px;
-    object-fit: cover;
-    border-radius: 16px;
-    display: block;
-    margin: 0 auto 30px;
+/* CONTENT */
+.card-content{
+    padding:20px;
+    text-align:center;
 }
 
-/* Judul produk */
-
-.p-rekomendasi {
-    text-align: center;
-    margin-top: 50px;
-    font-size: 2rem;
-    color: var(--Utama);
+.card-content h2{
+    font-size:24px;
+    color:#ff9900;
+    margin-bottom:10px;
 }
 
-/* GRID PRODUK */
-
-.produk-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-    padding: 40px 5%;
+/* PRICE */
+.price{
+    font-size:22px;
+    font-weight:bold;
+    color:#333;
 }
 
-/* CARD PRODUK */
-
-.card {
-    background: var(--Gelap-2);
-    border: 1px solid #222;
-    padding: 20px;
-    text-align: center;
-    border-radius: 15px;
-    transition: 0.4s;
+.discount{
+    text-decoration:line-through;
+    color:red;
+    margin-right:8px;
+    font-size:16px;
 }
 
-.card:hover {
-    transform: translateY(-10px);
-    border-color: var(--Utama);
-    box-shadow: 0 10px 30px rgba(0, 161, 255, 0.15);
+/* BUTTON */
+button{
+    margin-top:18px;
+    padding:12px 24px;
+    border:none;
+    border-radius:30px;
+    background:#ffcc00;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
 }
 
-/* Gambar produk */
-
-.card img {
-    width: 100%;
-    max-width: 220px;
-    height: 180px;
-    object-fit: cover;
-    display: block;
-    margin: auto;
+button:hover{
+    background:#ffaa00;
+    transform:scale(1.05);
 }
 
-/* teks produk */
-
-.card h3 {
-    font-size: 1.2rem;
-    margin: 10px 0;
-}
-
-.card .harga {
-    color: var(--Utama);
-    font-weight: bold;
-    font-size: 1.1rem;
-}
-
-.card .harga-coret {
-    color: var(--Text-Abu);
-    text-decoration: line-through;
-    font-size: 0.9rem;
-}
-
-.card .kategori {
-    color: var(--Text-Abu);
-    font-size: 0.85rem;
-    margin-bottom: 10px;
-}
-
-/* tombol */
-
-.btn-sec-1 {
-    background: var(--Utama);
-    color: black;
-    border: none;
-    padding: 15px 30px;
-    border-radius: 30px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.btn-buy {
-    background: transparent;
-    color: var(--Utama);
-    border: 1px solid var(--Utama);
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    width: 100%;
-    font-weight: bold;
-    text-transform: uppercase;
-    transition: 0.3s;
-}
-
-.btn-buy:hover {
-    background: var(--Utama);
-    color: #000;
-}
-
-/* footer */
-
-footer {
-    background: #000;
-    color: var(--Text-Abu);
-    text-align: center;
-    padding: 40px 20px;
-    margin-top: 50px;
-}
-
-footer p {
-    font-size: 0.9rem;
+/* FOOTER */
+footer{
+    background:#ffcc00;
+    text-align:center;
+    padding:18px;
+    color:white;
+    margin-top:40px;
+    font-size:14px;
 }
 
 /* RESPONSIVE */
+@media(max-width:768px){
 
-@media (max-width: 768px) {
-
-    header {
-        flex-direction: column;
-        gap: 15px;
+    header h1{
+        font-size:32px;
     }
 
-    nav {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
+    .card img{
+        height:240px;
     }
 
-    nav a {
-        margin-left: 0;
-    }
-
-    .section-1 img {
-        width: 100%;
-        max-width: 900px;
-        height: 300px;
-        object-fit: cover;
-        border-radius: 15px;
-    }
-
-    .p-rekomendasi {
-        font-size: 1.5rem;
-    }
-}
-
-@media (max-width: 480px) {
-
-    .produk-container {
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 20px;
-        padding: 40px 5%;
-    }
-
-    .card {
-        padding: 10px;
-    }
-
-    .card img {
-        height: 120px;
-    }
-
-    .card h3 {
-        font-size: 0.9rem;
-    }
-
-    .card .harga {
-        font-size: 0.85rem;
-    }
-
-    .btn-buy {
-        font-size: 0.7rem;
-        padding: 8px;
-    }
 }
